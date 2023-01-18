@@ -1,5 +1,9 @@
 p{
     color: white;
-    background-color: blue;
+    background-color: yellow;
     font-size: 20px;
+}
+
+.bordered{
+    border: 1px dashed black;
 }

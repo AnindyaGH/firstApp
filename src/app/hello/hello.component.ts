@@ -6,5 +6,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./hello.component.css']
 })
 export class HelloComponent {
-  courseName : string = "Angular";
+  courseName = "Angular";
+  colorRed = 'red';
+  colorBlue = 'blue';
+  isbordered = true;
 }

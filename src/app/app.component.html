@@ -298,16 +298,22 @@
   <img
     width="40"
     alt="Angular Logo"
-    src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg=="
+    [src]="source"
   />
   <span>Welcome</span>
     <div class="spacer"></div>   
+    <div>
+      <input type="text" (input)="changeSearchValue($event)" [value]="strInput" />
+      <input type="text" [(ngModel)]="strInput" />
+    </div>
+    <div>
+      <span *ngIf="strInput!=''">You typed {{strInput}}</span> 
+    </div>
 </div>
-
 <div class="content" role="main">
 
   <!-- Highlight Card -->
-  <div class="card highlight-card card-small">
+  <div class="alert alert-success">
     <span>{{ title }} app is running!</span>
   <input type="button" (click)="changeTitle()" value="Click here to change the title"/>
   </div>
@@ -315,7 +321,7 @@
     <p>Courses Offered :</p>
     <ul>
       <li *ngFor="let course of courses; let i = index">
-          <div class="card" (click)="selectedCourse()">{{i}} - Course Name:{{course.name}} - Duration:{{course.duration}}</div>
+          <div class="card">{{i}} - Course Name:{{course.name}} - Duration:{{course.duration}}</div>
       </li>
     </ul>
   </div>
@@ -324,6 +330,9 @@
       <p *ngSwitchCase="2">Course 2</p>
       <p *ngSwitchCase="3">Course 3</p>
       <p *ngSwitchCaseDefault>Default</p>
+  </div>
+  <div>
+    <p *appRepeat="5">I am being Repeated</p>
   </div>
   <!-- Footer -->
   <footer>

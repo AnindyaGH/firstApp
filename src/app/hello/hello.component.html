@@ -1,1 +1,1 @@
-<p>{{ courseName }} is awesome</p>
+<p [ngStyle]="{backgroundColor: isbordered === true ? colorRed : colorBlue}" [ngClass]="{bordered : isbordered}" *appRepeat="5">{{ courseName }} is awesome Color is {{isbordered === true ? colorRed : colorBlue}} and {{isbordered === true ? 'Bordered' : 'Not Bordered'}}</p>
